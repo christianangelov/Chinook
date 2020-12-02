@@ -33,7 +33,12 @@ namespace Chinook.Logic.Models.Persistence
         public int Bytes { get; set; }
         [DataPropertyInfo(OrderPosition = 8)]
 
-        public string UnitPrice { get; set; }
+        public double UnitPrice { get; set; }
+
+        public int CompareTo(object obj)
+        {
+            return MilliSeconds.CompareTo(((Track)obj).MilliSeconds);
+        }
     }
 }
 

@@ -17,7 +17,7 @@ namespace Chinook.WebApi.Controllers
         {
             return "test";
         }
-
+        //https://localhost:5001/api/MarketingStats/AlbumTimeStatistic
         [HttpGet("/api/[controller]/AlbumTimeStatistic")]
         public Contracts.Report.Marketing.IAlbumTimeStatistic AlbumTime()
         {

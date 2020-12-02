@@ -28,7 +28,7 @@ namespace Chinook.ConApp
 				$"Track with hightest Duration: {result.track_with_highest_duration.TrackName}\t\t\t{result.track_with_highest_duration.MilliSeconds / 1000}\n" +
 				$"Track with shortest Duration: {result.track_with_lowest_duration.TrackName}\t\t\t{result.track_with_lowest_duration.MilliSeconds / 1000}\n" +
 				$"Approximately Duration: \t\t\t\t{result.approximately_track_duration_in_milliseconds / 1000}");
-			Console.WriteLine();
+			Console.WriteLine(------------------------);
 			
 		}
 	}

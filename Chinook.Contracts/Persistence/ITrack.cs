@@ -13,7 +13,7 @@ namespace Chinook.Contracts.Persistence
          string Composer { get; set; }
          long MilliSeconds { get; set; }
          int Bytes { get; set; }
-         string UnitPrice { get; set; }
+         double UnitPrice { get; set; }
     }
 }
 
