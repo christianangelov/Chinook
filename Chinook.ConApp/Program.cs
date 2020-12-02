@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chinook.Logic;
+using System;
 
 namespace Chinook.ConApp
 {
@@ -6,25 +7,29 @@ namespace Chinook.ConApp
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Chinook-Marketing!");
+			Requests.GetAlbumStats();
+			Requests.GetCustomerStats();
+			Requests.GetGenreSellStats();
+			Requests.GetQuantitiyStats();
+			Requests.GetSellStats();
+			var result = Requests.GetTrackDurationStats();
 
-			var genres = Logic.Factory.GetAllGenres();
-			var artists = Logic.Factory.GetAllArtists();
-			var albums = Logic.Factory.GetAllAlbums();
-			var customers = Logic.Factory.GetAllCustomers();
-			var employees = Logic.Factory.GetAllEmployee();
-			//var invoices = Logic.Factory.GetAllInvoice();
-			//var invoiceLines = Logic.Factory.GetAllInvoice(); 
-			var mediaTypes = Logic.Factory.GetAllMediaType();
-			var playlists = Logic.Factory.GetAllPlaylist();
-			//var playlistTracks = Logic.Factory.GetAllPlaylistTrack();
-			//var RoomDatas = Logic.Factory.GetAllRoomData(); 
-			//var tracks = Logic.Factory.GetAllTrack(); 
+			// Ausgabe
+			Console.WriteLine("-----------------------------------------------------------");
+			Console.WriteLine("*           Chinook-Marketing                             *");
+			Console.WriteLine("*           Angelov Christian                             *");
+			Console.WriteLine("*----------------------------------------------------------");
+			Console.WriteLine();
+			
 
 
-			var artistStatistics = Report.MarketingReports.GetArtistStatistics();
-            Console.WriteLine(artistStatistics);
-		
+			Console.WriteLine("Track-Zeit Auswertung\n" +
+				"Tack/Titel\n" +
+				$"Track with hightest Duration: {result.track_with_highest_duration.TrackName}\t\t\t{result.track_with_highest_duration.MilliSeconds / 1000}\n" +
+				$"Track with shortest Duration: {result.track_with_lowest_duration.TrackName}\t\t\t{result.track_with_lowest_duration.MilliSeconds / 1000}\n" +
+				$"Approximately Duration: \t\t\t\t{result.approximately_track_duration_in_milliseconds / 1000}");
+			Console.WriteLine();
+			
 		}
 	}
 }

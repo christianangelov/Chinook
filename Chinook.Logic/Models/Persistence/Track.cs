@@ -27,7 +27,7 @@ namespace Chinook.Logic.Models.Persistence
         public string Composer { get; set; }
         [DataPropertyInfo(OrderPosition = 6)]
 
-        public string MilliSeconds { get; set; }
+        public long MilliSeconds { get; set; }
         [DataPropertyInfo(OrderPosition = 7)]
 
         public int Bytes { get; set; }

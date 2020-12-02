@@ -11,7 +11,7 @@ namespace Chinook.Contracts.Persistence
          int MediaTypeId { get; set; }
          int GenreId { get; set; }
          string Composer { get; set; }
-         string MilliSeconds { get; set; }
+         long MilliSeconds { get; set; }
          int Bytes { get; set; }
          string UnitPrice { get; set; }
     }
